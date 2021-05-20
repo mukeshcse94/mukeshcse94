@@ -1,0 +1,26 @@
+{
+  "name": "password_reset",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.9",
+    "nodemailer": "^6.4.17"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0",
+    "nodemon": "^2.0.6"
+  }
+}
