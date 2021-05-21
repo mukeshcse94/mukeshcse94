@@ -1,7 +1,0 @@
-sendGrid:
-email: mukeshcs94@gmail.com
-password:mukeshSingh@1234567
-
-git:
-username: mukeshcse94
-password: edurights@123

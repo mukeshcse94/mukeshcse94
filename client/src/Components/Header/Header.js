@@ -1,33 +1,28 @@
-import React from "react";
-import "./header.style.scss";
-import { connect } from "react-redux";
-import CoverPhoto from "../CoverPhoto/coverPhoto";
-import ProfilePhoto from "../ProfilePhoto/ProfilePhoto.component";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Menu from './Menu'
+import Search from './Search'
 
-const Header = ({ name, id, isUser }) => {
-  return (
-    <div className="header-section">
-      <CoverPhoto
-        urlToImage={`http://localhost:5000/profile/cover/${id}?${Date.now()}`}
-        alt={name}
-        isAuthUser={isUser}
-        uploadUrl="/profile/upload/cover"
-      />
-      <div className="navbar">
-        <div className="profile-pic_container">
-          <ProfilePhoto />
-          <h3 className="profile_name">{name}</h3>
+const Header = () => {
+
+    return (
+        <div className="header bg-light">
+            <nav className="navbar navbar-expand-lg navbar-light 
+            bg-light justify-content-between align-middle">
+
+                <Link to="/" className="logo">
+                    <h1 className="navbar-brand text-uppercase p-0 m-0"
+                    onClick={() => window.scrollTo({top: 0})}>
+                        V-Network
+                    </h1>
+                </Link>
+
+                <Search />
+
+                <Menu />
+            </nav>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
 
-const mapStateToProps = (state) => {
-  return {
-    name: `${state.profileReducer.profile.f_name} ${state.profileReducer.profile.l_name}`,
-    id: state.profileReducer.profile._id,
-    isUser: state.isUser,
-  };
-};
-export default connect(mapStateToProps)(Header);
+export default Header
