@@ -48,7 +48,6 @@ const Login = () => {
                     <label htmlFor="exampleInputPassword1">Password</label>
 
                     <div className="pass">
-                        
                         <input type={ typePass ? "text" : "password" } 
                         className="form-control" id="exampleInputPassword1"
                         onChange={handleChangeInput} value={password} name="password" />
@@ -57,7 +56,6 @@ const Login = () => {
                             {typePass ? 'Hide' : 'Show'}
                         </small>
                     </div>
-                   
                 </div>
                 
                 <button type="submit" className="btn btn-dark w-100"

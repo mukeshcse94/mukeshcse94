@@ -42,19 +42,15 @@ const Info = ({id, auth, profile, dispatch}) => {
                         <div className="info_content">
                             <div className="info_content_title">
                                 <h2>{user.username}</h2>
-                                {
-                                    user._id === auth.user._id
-                                    ?  <button className="btn btn-outline-info"
+                                {user._id === auth.user._id ?  
+                                    <button className="btn btn-outline-info"
                                     onClick={() => setOnEdit(true)}>
                                         Edit Profile
                                     </button>
                                     
                                     : <FollowBtn user={user} />
                                 }
-                               
-                                
                             </div>
-
                             <div className="follow_btn">
                                 <span className="mr-4" onClick={() => setShowFollowers(true)}>
                                     {user.followers.length} Followers
@@ -73,20 +69,14 @@ const Info = ({id, auth, profile, dispatch}) => {
                             <p>{user.story}</p>
                         </div>
 
-                        {
-                            onEdit && <EditProfile setOnEdit={setOnEdit} />
-                        }
+                        {onEdit && <EditProfile setOnEdit={setOnEdit} />}
 
-                        {
-                            showFollowers &&
-                            <Followers 
+                        {showFollowers && <Followers 
                             users={user.followers} 
                             setShowFollowers={setShowFollowers} 
                             />
                         }
-                        {
-                            showFollowing &&
-                            <Following 
+                        {showFollowing && <Following 
                             users={user.following} 
                             setShowFollowing={setShowFollowing} 
                             />
