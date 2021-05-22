@@ -45,9 +45,7 @@ const EditProfile = ({setOnEdit}) => {
     return (
         <div className="edit_profile">
             <button className="btn btn-danger btn_close"
-            onClick={() => setOnEdit(false)}>
-                Close
-            </button>
+                onClick={() => setOnEdit(false)}>Close</button>
 
             <form onSubmit={handleSubmit}>
                 <div className="info_avatar">

@@ -39,7 +39,7 @@ const CommentMenu = ({post, comment, setOnEdit}) => {
                     <div className="dropdown-menu" aria-labelledby="moreLink">
                         {
                             post.user._id === auth.user._id
-                            ? comment.user._id === auth.user._id
+                                ? comment.user._id === auth.user._id
                                 ? MenuItem()
                                 : <div className="dropdown-item" onClick={handleRemove}>
                                     <span className="material-icons">delete_outline</span> Remove
@@ -47,10 +47,8 @@ const CommentMenu = ({post, comment, setOnEdit}) => {
                             : comment.user._id === auth.user._id && MenuItem()
                         }
                     </div>
-
                 </div>
             }
-            
         </div>
     )
 }

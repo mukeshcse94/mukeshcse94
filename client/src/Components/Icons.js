@@ -18,16 +18,14 @@ const Icons = ({setContent, content, theme}) => {
 
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <div className="reactions">
-                    {
-                        reactions.map(icon => (
-                            <span key={icon} onClick={() => setContent(content + icon)}>
-                                {icon}
-                            </span>
+                    {reactions.map(icon => (
+                        <span key={icon} onClick={() => setContent(content + icon)}>
+                            {icon}
+                        </span>
                         ))
                     }
                 </div>
             </div>
-                
         </div>
     )
 }

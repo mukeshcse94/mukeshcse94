@@ -13,7 +13,7 @@ const Posts = () => {
     const dispatch = useDispatch()
 
     const [load, setLoad] = useState(false)
-
+    
     const handleLoadMore = async () => {
         setLoad(true)
         const res = await getDataAPI(`posts?limit=${homePosts.page * 9}`, auth.token)
@@ -28,16 +28,12 @@ const Posts = () => {
 
     return (
         <div className="posts">
-            {
-                homePosts.posts.map(post => (
+            {homePosts.posts.map(post => (
                     <PostCard key={post._id} post={post} theme={theme} />
                 ))
             }
 
-            {
-                load && <img src={LoadIcon} alt="loading" className="d-block mx-auto" />
-            }
-
+            {load && <img src={LoadIcon} alt="loading" className="d-block mx-auto" />}
             
             <LoadMoreBtn result={homePosts.result} page={homePosts.page}
             load={load} handleLoadMore={handleLoadMore} />
