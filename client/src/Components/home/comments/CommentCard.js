@@ -84,8 +84,11 @@ const CommentCard = ({children, comment, post, commentId}) => {
                     filter: theme ? 'invert(1)' : 'invert(0)',
                     color: theme ? 'white' : '#111',
                 }}>
-                    { onEdit ? <textarea rows="5" value={content}
+                    {
+                        onEdit 
+                        ? <textarea rows="5" value={content}
                         onChange={e => setContent(e.target.value)} />
+
                         : <div>
                             {
                                 comment.tag && comment.tag._id !== comment.user._id &&
@@ -118,20 +121,29 @@ const CommentCard = ({children, comment, post, commentId}) => {
                             {comment.likes.length} likes
                         </small>
 
-                        {  onEdit  ? <>
+                        {
+                            onEdit
+                            ? <>
                                 <small className="font-weight-bold mr-3"
-                                    onClick={handleUpdate}>update
+                                onClick={handleUpdate}>
+                                    update
                                 </small>
                                 <small className="font-weight-bold mr-3"
-                                    onClick={() => setOnEdit(false)}>cancel
+                                onClick={() => setOnEdit(false)}>
+                                    cancel
                                 </small>
                             </>
-                            : <small className="font-weight-bold mr-3" onClick={handleReply}>
+
+                            : <small className="font-weight-bold mr-3"
+                            onClick={handleReply}>
                                 {onReply ? 'cancel' :'reply'}
                             </small>
                         }
+                        
                     </div>
+                    
                 </div>
+
 
                 <div className="d-flex align-items-center mx-2" style={{cursor: 'pointer'}}>
                     <CommentMenu post={post} comment={comment} setOnEdit={setOnEdit} />
@@ -139,13 +151,15 @@ const CommentCard = ({children, comment, post, commentId}) => {
                 </div>
             </div> 
             
-            { onReply &&
+            {
+                onReply &&
                 <InputComment post={post} onReply={onReply} setOnReply={setOnReply} >
                     <Link to={`/profile/${onReply.user._id}`} className="mr-1">
                         @{onReply.user.username}:
                     </Link>
                 </InputComment>
             }
+
             {children}
         </div>
     )

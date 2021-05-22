@@ -184,15 +184,17 @@ const CallModal = () => {
     return (
         <div className="call_modal">
             <div className="call_box" style={{
-                display: (answer && call.video) ? 'none' : 'flex'}}>
+                display: (answer && call.video) ? 'none' : 'flex'
+            }} >
 
                 <div className="text-center" style={{padding: '40px 0'}} >
                     <Avatar src={call.avatar} size="supper-avatar" />
                     <h4>{call.username}</h4>
                     <h6>{call.fullname}</h6>
 
-                    {answer ? 
-                        <div>
+                    {
+                        answer 
+                        ? <div>
                             <span>{ hours.toString().length < 2 ? '0' + hours : hours }</span>
                             <span>:</span>
                             <span>{ mins.toString().length < 2 ? '0' + mins : mins }</span>
@@ -201,14 +203,17 @@ const CallModal = () => {
                         </div>
                         : <div>
                             {
-                                call.video ? <span>calling video...</span>
+                                call.video
+                                ? <span>calling video...</span>
                                 : <span>calling audio...</span>
                             }
                         </div>
                     }
+                    
                 </div>
                 
-                {!answer && 
+                {
+                    !answer && 
                     <div className="timer">
                         <small>{ mins.toString().length < 2 ? '0' + mins : mins }</small>
                         <small>:</small>
@@ -219,11 +224,16 @@ const CallModal = () => {
 
                 <div className="call_menu">
                     <button className="material-icons text-danger"
-                        onClick={handleEndCall}>call_end</button>
+                    onClick={handleEndCall}>
+                        call_end
+                    </button>
                     
-                    {(call.recipient === auth.user._id && !answer) &&
+                    {
+                        (call.recipient === auth.user._id && !answer) &&
                         <>
-                            {call.video ? <button className="material-icons text-success"
+                            {
+                                call.video
+                                ? <button className="material-icons text-success"
                                 onClick={handleAnswer}>
                                     videocam
                                 </button>
@@ -234,7 +244,9 @@ const CallModal = () => {
                             }
                         </>
                     }
+                    
                 </div>
+                
             </div>
 
             <div className="show_video" style={{
@@ -254,8 +266,12 @@ const CallModal = () => {
                 </div>
 
                 <button className="material-icons text-danger end_call"
-                    onClick={handleEndCall}>call_end</button>
+                onClick={handleEndCall}>
+                    call_end
+                </button>
+
             </div>
+
         </div>
     )
 }

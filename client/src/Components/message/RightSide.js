@@ -182,14 +182,18 @@ const RightSide = () => {
     return (
         <>
             <div className="message_header" style={{cursor: 'pointer'}} >
-                {user.length !== 0 &&
+                {
+                    user.length !== 0 &&
                     <UserCard user={user}>
                         <div>
-                            <i className="fas fa-phone-alt" onClick={handleAudioCall} />
+                            <i className="fas fa-phone-alt"
+                            onClick={handleAudioCall} />
 
-                            <i className="fas fa-video mx-3" onClick={handleVideoCall} />
+                            <i className="fas fa-video mx-3"
+                            onClick={handleVideoCall} />
 
-                            <i className="fas fa-trash text-danger" onClick={handleDeleteConversation} />
+                            <i className="fas fa-trash text-danger"
+                            onClick={handleDeleteConversation} />
                         </div>
                     </UserCard>
                 }
@@ -202,7 +206,8 @@ const RightSide = () => {
                         Load more
                     </button>
 
-                    {data.map((msg, index) => (
+                    {
+                        data.map((msg, index) => (
                                 <div key={index}>
                                     {
                                         msg.sender !== auth.user._id &&
@@ -220,6 +225,7 @@ const RightSide = () => {
                                 </div>
                         ))
                     }
+                    
 
                    {
                        loadMedia && 
@@ -227,6 +233,7 @@ const RightSide = () => {
                            <img src={LoadIcon} alt="loading"/>
                        </div>
                    }
+
                 </div>
             </div>
 
@@ -263,7 +270,9 @@ const RightSide = () => {
                 </div>
 
                 <button type="submit" className="material-icons" 
-                disabled={(text || media.length > 0) ? false : true}>near_me</button>
+                disabled={(text || media.length > 0) ? false : true}>
+                    near_me
+                </button>
             </form>
         </>
     )

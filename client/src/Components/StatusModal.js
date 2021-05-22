@@ -110,8 +110,7 @@ const StatusModal = () => {
                 <div className="status_header">
                     <h5 className="m-0">Create Post</h5>
                     <span onClick={() => dispatch({
-                        type: GLOBALTYPES.STATUS, 
-                        payload: false
+                        type: GLOBALTYPES.STATUS, payload: false
                     })}>
                         &times;
                     </span>
@@ -133,25 +132,26 @@ const StatusModal = () => {
                     </div>
 
                     <div className="show_images">
-                        {images.map((img, index) => (
-                            <div key={index} id="file_img">
-                                {
-                                    img.camera ? imageShow(img.camera, theme)
-                                    : img.url
-                                        ?<>
-                                            {
-                                                img.url.match(/video/i)
-                                                ? videoShow(img.url, theme) 
-                                                : imageShow(img.url, theme)
-                                            }
-                                        </>
-                                        :<>
-                                            {
-                                                img.type.match(/video/i)
-                                                ? videoShow(URL.createObjectURL(img), theme) 
-                                                : imageShow(URL.createObjectURL(img), theme)
-                                            }
-                                        </>
+                        {
+                            images.map((img, index) => (
+                                <div key={index} id="file_img">
+                                    {
+                                        img.camera ? imageShow(img.camera, theme)
+                                        : img.url
+                                            ?<>
+                                                {
+                                                    img.url.match(/video/i)
+                                                    ? videoShow(img.url, theme) 
+                                                    : imageShow(img.url, theme)
+                                                }
+                                            </>
+                                            :<>
+                                                {
+                                                    img.type.match(/video/i)
+                                                    ? videoShow(URL.createObjectURL(img), theme) 
+                                                    : imageShow(URL.createObjectURL(img), theme)
+                                                }
+                                            </>
                                     }
                                     <span onClick={() => deleteImages(index)}>&times;</span>
                                 </div>
@@ -159,7 +159,8 @@ const StatusModal = () => {
                         }
                     </div>
 
-                    {stream && 
+                    {
+                        stream && 
                         <div className="stream position-relative">
                             <video autoPlay muted ref={videoRef} width="100%" height="100%"
                             style={{filter: theme ? 'invert(1)' : 'invert(0)'}} />
@@ -170,7 +171,8 @@ const StatusModal = () => {
                     }
 
                     <div className="input_images">
-                        {stream 
+                        {
+                            stream 
                             ? <i className="fas fa-camera" onClick={handleCapture} />
                             : <>
                                 <i className="fas fa-camera" onClick={handleStream} />
@@ -182,12 +184,17 @@ const StatusModal = () => {
                                 </div>
                             </>
                         }
+                        
                     </div>
+
                 </div>
 
                 <div className="status_footer">
-                    <button className="btn btn-secondary w-100" type="submit">Post</button>
+                    <button className="btn btn-secondary w-100" type="submit">
+                        Post
+                    </button>
                 </div>
+
             </form>
         </div>
     )

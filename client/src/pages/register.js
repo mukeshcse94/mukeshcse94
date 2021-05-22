@@ -74,6 +74,7 @@ const Register = () => {
                     <label htmlFor="exampleInputPassword1">Password</label>
 
                     <div className="pass">
+                        
                         <input type={ typePass ? "text" : "password" } 
                         className="form-control" id="exampleInputPassword1"
                         onChange={handleChangeInput} value={password} name="password"
@@ -93,6 +94,7 @@ const Register = () => {
                     <label htmlFor="cf_password">Confirm Password</label>
 
                     <div className="pass">
+                        
                         <input type={ typeCfPass ? "text" : "password" } 
                         className="form-control" id="cf_password"
                         onChange={handleChangeInput} value={cf_password} name="cf_password"

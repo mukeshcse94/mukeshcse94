@@ -88,11 +88,15 @@ const CardFooter = ({post}) => {
                     <img src={Send} alt="Send" onClick={() => setIsShare(!isShare)} />
                 </div>
 
-                {saved  ?  <i className="fas fa-bookmark text-info"
+                {
+                    saved 
+                    ?  <i className="fas fa-bookmark text-info"
                     onClick={handleUnSavePost} />
+
                     :  <i className="far fa-bookmark"
                     onClick={handleSavePost} />
                 }
+               
             </div>
 
             <div className="d-flex justify-content-between">
@@ -105,7 +109,9 @@ const CardFooter = ({post}) => {
                 </h6>
             </div>
 
-            {isShare && <ShareModal url={`${BASE_URL}/post/${post._id}`} theme={theme} />}
+            {
+                isShare && <ShareModal url={`${BASE_URL}/post/${post._id}`} theme={theme} />
+            }
         </div>
     )
 }

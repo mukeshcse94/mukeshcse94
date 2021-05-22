@@ -25,8 +25,11 @@ const CardBody = ({post, theme}) => {
                         {readMore ? 'Hide content' : 'Read more'}
                     </span>
                 }
+
             </div>
-            {post.images.length > 0 && <Carousel images={post.images} id={post._id} />}
+            {
+                post.images.length > 0 && <Carousel images={post.images} id={post._id} />
+            }
         </div>
     )
 }

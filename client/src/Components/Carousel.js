@@ -17,25 +17,31 @@ const Carousel = ({images, id}) => {
                         data-slide-to={index} className={isActive(index)} />
                     ))
                 }
+                
             </ol>
 
             <div className="carousel-inner">
-                {images.map((img, index) => (
-                    <div key={index} className={`carousel-item ${isActive(index)}`}>
-                        {
-                            img.url.match(/video/i)
-                            ? <video controls src={img.url} className="d-block w-100" alt={img.url}
-                            style={{filter: theme ? 'invert(1)' : 'invert(0)'}} />
+                {
+                    images.map((img, index) => (
+                        <div key={index} className={`carousel-item ${isActive(index)}`}>
+                            {
+                                // img.url.match(/video/i) 
+                                !img
+                                ? <video controls src={img.url} className="d-block w-100" alt={img.url}
+                                style={{filter: theme ? 'invert(1)' : 'invert(0)'}} />
 
-                            : <img src={img.url} className="d-block w-100" alt={img.url}
-                            style={{filter: theme ? 'invert(1)' : 'invert(0)'}} />
-                        }
-                    </div>
+                                : <img src={img.url} className="d-block w-100" alt={img.url}
+                                style={{filter: theme ? 'invert(1)' : 'invert(0)'}} />
+                            }
+                           
+                        </div>
                     ))
                 }
+                
             </div>
             
-            {images.length > 1 &&
+            {
+                images.length > 1 &&
                 <>
                     <a className="carousel-control-prev" href={`#image${id}`} role="button" data-slide="prev"
                     style={{width: '5%'}}>
@@ -50,6 +56,7 @@ const Carousel = ({images, id}) => {
                     </a>
                 </>
             }
+            
         </div>
     )
 }

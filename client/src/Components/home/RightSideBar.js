@@ -23,8 +23,9 @@ const RightSideBar = () => {
                 }
             </div>
 
-            {suggestions.loading ? 
-                <img src={LoadIcon} alt="loading" className="d-block mx-auto my-4" />
+            {
+                suggestions.loading
+                ? <img src={LoadIcon} alt="loading" className="d-block mx-auto my-4" />
                 : <div className="suggestions">
                     {
                         suggestions.users.map(user => (
@@ -37,18 +38,19 @@ const RightSideBar = () => {
             }
 
             <div style={{opacity: 0.5}} className="my-2" >
-                <a href="https://edurights.herokuapp.com/" target="_blank" rel="noreferrer"
+                <a href="https://www.youtube.com/c/DevATHTML" target="_blank" rel="noreferrer"
                 style={{wordBreak: 'break-all'}} >
-                    https://edurights.herokuapp.com/
+                    https://www.youtube.com/c/DevATHTML
                 </a>
                 <small className="d-block">
-                    Welcome to our site "EduRights"
+                    Welcome to our channel "DevAT-VietNam"
                 </small>
 
                 <small>
-                   &copy; 2021 DigiCreations 
+                   &copy; 2021 V-NETWORK FROM DEV A.T VIET NAM
                 </small>
             </div>
+
         </div>
     )
 }

@@ -13,7 +13,8 @@ const Notify = () => {
         <div>
             {alert.loading && <Loading />}
 
-            {   alert.error && 
+            {
+                alert.error && 
                 <Toast msg={{title: 'Error', body: alert.error}}
                 handleShow={() => dispatch({type: GLOBALTYPES.ALERT, payload: {}})} 
                 bgColor="bg-danger" />

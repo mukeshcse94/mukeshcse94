@@ -25,12 +25,16 @@ const CommentDisplay = ({comment, post, replyCm}) => {
                         ))
                     }
 
-                    {  replyCm.length - next > 0
+                    {
+                        replyCm.length - next > 0
                         ? <div style={{cursor: 'pointer', color: 'crimson'}}
-                            onClick={() => setNext(next + 10)}>See more comments...</div>
+                        onClick={() => setNext(next + 10)}>
+                            See more comments...
+                        </div>
 
                         : replyCm.length > 1 &&
-                        <div style={{cursor: 'pointer', color: 'crimson'}} onClick={() => setNext(1)}>
+                        <div style={{cursor: 'pointer', color: 'crimson'}}
+                        onClick={() => setNext(1)}>
                             Hide comments...
                         </div>
                     }

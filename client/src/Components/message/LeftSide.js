@@ -91,20 +91,24 @@ const LeftSide = () => {
             </form>
 
             <div className="message_chat_list">
-                {searchUsers.length !== 0 ?  
-                    <>
-                        {searchUsers.map(user => (
+                {
+                    searchUsers.length !== 0
+                    ?  <>
+                        {
+                            searchUsers.map(user => (
                                 <div key={user._id} className={`message_user ${isActive(user)}`}
-                                    onClick={() => handleAddUser(user)}>
+                                onClick={() => handleAddUser(user)}>
                                     <UserCard user={user} />
                                 </div>
                             ))
                         }
+                        
                     </>
                     : <>
-                        {message.users.map(user => (
+                        {
+                            message.users.map(user => (
                                 <div key={user._id} className={`message_user ${isActive(user)}`}
-                                    onClick={() => handleAddUser(user)}>
+                                onClick={() => handleAddUser(user)}>
                                     <UserCard user={user} msg={true}>
                                         {
                                             user.online
@@ -112,13 +116,16 @@ const LeftSide = () => {
                                             : auth.user.following.find(item => 
                                                 item._id === user._id
                                             ) && <i className="fas fa-circle" />
+                                                
                                         }
+                                        
                                     </UserCard>
                                 </div>
                             ))
                         }
                     </>
                 }
+               
                <button ref={pageEnd} style={{opacity: 0}} >Load More</button>
             </div>
         </>

@@ -47,6 +47,7 @@ const Profile = () => {
                     }
                 </>
             }
+            
         </div>
     )
 }
