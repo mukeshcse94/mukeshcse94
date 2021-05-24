@@ -1,82 +1,36 @@
-# ProShop eCommerce Platform
+# MERN Stack - Ecommerce
+> Ecommerce website built with the MERN stack with React Context API for state management, pure CSS for style
 
-> eCommerce platform built with the MERN stack & Redux.
+## Demo: https://devat-ecommerce.herokuapp.com/
 
-This is the course project for my [MERN eCommerce From Scratch](https://www.udemy.com/course/mern-ecommerce) course
+## Author: Dev AT
+## Youtube tutorials: https://youtu.be/AjItjNc0bHA
 
-![screenshot](https://github.com/bradtraversy/proshop_mern/blob/master/uploads/Screen%20Shot%202020-09-29%20at%205.50.52%20PM.png)
+## Install dependencies for server 
+### `npm install`
 
-## Features
+## Install dependencies for client
+### cd client ---> `npm install`
 
-- Full featured shopping cart
-- Product reviews and ratings
-- Top products carousel
-- Product pagination
-- Product search feature
-- User profile with orders
-- Admin product management
-- Admin user management
-- Admin Order details page
-- Mark orders as delivered option
-- Checkout process (shipping, payment method, etc)
-- PayPal / credit card integration
-- Database seeder (products & users)
+## Connect to your mongodb and add info in .env
 
-## Usage
+## Add your paypal client id in client/src/components/mainpages/cart/PaypalButton.js
 
-### ES Modules in Node
+## Run the client & server with concurrently
+### `npm run dev`
 
-We us ECMAScript Modules in the backend in this project. Be sure to have at least Node v14.6+ or you will need to add the "--experimental-modules" flag.
+## Run the Express server only
+### `npm run server`
 
-Also, when importing a file (not a package), be sure to add .js at the end or you will get a "module not found" error
+## Run the React client only
+### `npm run client`
 
-You can also install and setup Babel if you would like
+### Server runs on http://localhost:5000 and client on http://localhost:3000
 
-### Env Variables
+### User interface 
 
-Create a .env file in then root and add the following
+![alt](https://res.cloudinary.com/devatchannel/image/upload/v1599568147/test/1_pe9ism.png)
 
-```
-NODE_ENV = development
-PORT = 5000
-MONGO_URI = your mongodb uri
-JWT_SECRET = 'abc123'
-PAYPAL_CLIENT_ID = your paypal client id
-```
+### Admin interface 
 
-## Build & Deploy
-
-```
-# Create frontend prod build
-cd frontend
-npm run build
-```
-
-There is a Heroku postbuild script, so if you push to Heroku, no need to build manually for deployment to Heroku
-
-### Seed Database
-
-You can use the following commands to seed the database with some sample users and products as well as destroy all data
-
-```
-# Import data
-npm run data:import
-
-# Destroy data
-npm run data:destroy
-```
-
-```
-Sample User Logins
-
-admin@example.com (Admin)
-123456
-
-john@example.com (Customer)
-123456
-
-jane@example.com (Customer)
-123456
-```
-
-
+![alt](https://res.cloudinary.com/devatchannel/image/upload/v1599568148/test/2_obw2r7.png)
