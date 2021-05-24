@@ -37,7 +37,6 @@ function Pages() {
 
             <Route path="/cart" exact component={Cart} />
 
-
             <Route path="*" exact component={NotFound} />
         </Switch>
     )

@@ -11,7 +11,6 @@ export const GlobalState = createContext()
 export const DataProvider = ({children}) =>{
     const [token, setToken] = useState(false)
 
-
     useEffect(() =>{
         const firstLogin = localStorage.getItem('firstLogin')
         if(firstLogin){
